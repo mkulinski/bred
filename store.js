@@ -1,5 +1,5 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware'
@@ -14,11 +14,10 @@ const defaultState = {
   },
   expenses: [{cost: '12', cat: 'food'}]
 }
-
-const middleware = applyMiddleware(promise(), thunk);
+const newRouter = routerMiddleware(browserHistory);
+const middleware = applyMiddleware(promise(), thunk, newRouter);
 
 const store = createStore(userReducer, defaultState, middleware);
 
 export const history = syncHistoryWithStore(browserHistory, store);
-
 export default store;

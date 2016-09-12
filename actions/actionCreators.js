@@ -1,5 +1,6 @@
 // what passes through props and you call in react
 import axios from 'axios';
+import { push } from 'react-router-redux';
 
 export function changeUserInfo(username, email){
   return {
@@ -15,25 +16,12 @@ export function sendLoginData(userObj){
     .then(function(response) {
       dispatch({type: 'SEND_LOGIN_DATA_SUCCESS', payload: userObj})
     })
+    .then(function() {
+      dispatch(push('/dashboard'))
+    })
     .catch(function(err) {
       console.log('error', err)
       dispatch({type: 'SEND_LOGIN_DATA_ERROR', error: err})
     })
   }
 }
-
-// export function sendData(userObj) {
-//   $.ajax({
-//     type: 'POST',
-//     url: 'http://localhost:3000/signup',
-//     data: userObj
-//   })
-//   .done(function(data) {
-//     return function(dispatch){
-//       dispatch({
-//         type: 'SENDDATA_SUCCESS',
-//         payload: data
-//       });
-//     }
-//   });
-//   }
