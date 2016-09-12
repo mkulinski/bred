@@ -11,7 +11,7 @@ const defaultState = {
           email: 'me@michaelkulinski.com',
           loading: false,
           error:null
-        },
+  },
   expenses: [{cost: '12', cat: 'food'}]
 }
 

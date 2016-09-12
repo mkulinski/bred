@@ -13,17 +13,11 @@ export function sendLoginData(userObj){
   return function(dispatch) {
     axios.post("http://localhost:3000/login", userObj)
     .then(function(response) {
-      return {
-        type: 'SEND_LOGIN_DATA_SUCCESS',
-        payload: userObj
-      }
+      dispatch({type: 'SEND_LOGIN_DATA_SUCCESS', payload: userObj})
     })
     .catch(function(err) {
       console.log('error', err)
-      return {
-        type: 'SEND_LOGIN_DATA_ERROR',
-        err
-      }
+      dispatch({type: 'SEND_LOGIN_DATA_ERROR', error: err})
     })
   }
 }

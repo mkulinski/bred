@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from './nav'
 import { browserHistory } from 'react-router'
-import $ from 'jquery';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -23,8 +22,8 @@ export default class Login extends React.Component {
     // }
     // let stringData = JSON.stringify({username: userName});
 
-    const path = `/dashboard/`
-    browserHistory.push(path)
+    // const path = `/dashboard/`
+    // browserHistory.push(path)
 
     // $.ajax({
     //     url : "http://localhost:3000/login",

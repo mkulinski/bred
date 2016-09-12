@@ -1,3 +1,4 @@
+//used to pass props down to all children from store
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
