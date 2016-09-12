@@ -20,7 +20,7 @@ export default class Profile extends React.Component {
           document.getElementById('rec-expenses-list').appendChild(listElem);
         }
       })
-    })    
+    })
   }
 
   submit(e) {
@@ -59,7 +59,7 @@ export default class Profile extends React.Component {
           }
         })
         localStorage.setItem("expenses", JSON.stringify(data));
-      }) 
+      })
 	  });
 
     //resets field
@@ -68,6 +68,7 @@ export default class Profile extends React.Component {
 
   render() {
     this.refreshData();
+    console.log('propers', this.props.user)
     return (
     	<div>
     		<h1>Add Recurring Expenses</h1>
@@ -88,5 +89,3 @@ export default class Profile extends React.Component {
     )
   }
 }
-
-

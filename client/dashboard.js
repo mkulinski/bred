@@ -12,7 +12,7 @@ export default class DashBoard extends React.Component {
     super(props);
   }
   render() {
-
+    console.log('props in dash',this.props.user);
     let user = JSON.parse(localStorage.getItem("user")).username;
     return (
       <div>

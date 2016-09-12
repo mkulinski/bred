@@ -4,14 +4,19 @@ import { routerReducer } from 'react-router-redux';
 
 function user(state = {}, action) {
 
-  // console.log('userStateChange',action);
+  console.log('userStateChange',action);
   switch (action.type) {
-    case 'SENDDATA_SUCCESS':
-      return Object.assign({}, state, user: { username: action.payload.username,
-                                              email: action.payload.email,
-                                              loading: false,
-                                              error: null});
+    case 'SEND_LOGIN_DATA_SUCCESS':
+      return Object.assign({}, state, { username: action.payload.username,
+                                        loading: false,
+                                        error: null});
 
+      break;
+    case 'SEND_LOGIN_DATA_ERROR':
+      return Object.assign({}, state, {
+        loading: false,
+        error: action.err
+      })
       break;
     case 'CHANGE_USER_INFO':
       return Object.assign({}, state, {
@@ -26,7 +31,7 @@ function user(state = {}, action) {
 }
 
 function expenses(state=[], action) {
-  // console.log(state, action);
+  console.log(state, action);
   return state;
 }
 

@@ -56,7 +56,7 @@ export default class Signup extends React.Component {
 	}
 
   render() {
-		// console.log('this is props', this.props)
+		console.log('this is props', this.props.user)
     return (
       <div>
         <div className="component-container">
