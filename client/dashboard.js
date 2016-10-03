@@ -13,18 +13,32 @@ export default class DashBoard extends React.Component {
   }
   render() {
     console.log('props in dash',this.props.user);
-    let user = JSON.parse(localStorage.getItem("user")).username;
     return (
       <div>
-        <h2>{user} Dashboard</h2>
+        <h2>{ this.props.user.username }s Dashboard</h2>
         <h3 className="expenses">Expenses vs. Income</h3>
-        <ProgressBar />
         <h3 className="expenses">Recent Expenses Breakdown</h3>
         <div className="flex">
-          <Pie />
-          <TimeChart />
         </div>
       </div>
     )
   }
 }
+
+// //original render
+// render() {
+//   console.log('props in dash',this.props.user);
+//   let user = JSON.parse(localStorage.getItem("user")).username;
+//   return (
+//     <div>
+//       <h2>{user} Dashboard</h2>
+//       <h3 className="expenses">Expenses vs. Income</h3>
+//       <ProgressBar />
+//       <h3 className="expenses">Recent Expenses Breakdown</h3>
+//       <div className="flex">
+//         <Pie />
+//         <TimeChart />
+//       </div>
+//     </div>
+//   )
+// }

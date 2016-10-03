@@ -1,9 +1,11 @@
 'use strict'
+
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 
 function user(state = {}, action) {
+
   console.log('userStateChange',action);
   switch (action.type) {
     case 'SEND_LOGIN_DATA_SUCCESS':
@@ -15,6 +17,7 @@ function user(state = {}, action) {
       break;
     case 'SEND_LOGIN_DATA_ERROR':
       return Object.assign({}, state, {
+        username: '',
         loading: false,
         error: action.err
       })
@@ -32,7 +35,7 @@ function user(state = {}, action) {
 }
 
 function expenses(state=[], action) {
-  console.log(state, action);
+  console.log('expenses',state, action);
   return state;
 }
 

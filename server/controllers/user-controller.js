@@ -12,7 +12,7 @@ function signup(req, res) {
 	}).then(function(user) {
 		res.status('200').json(user);
 	}).catch(function(err) {
-		console.log('error', err);
+		console.log('server error', err);
 	});
 }
 
@@ -23,7 +23,7 @@ function getUser(req, res) {
   }).then(function(expense) {
 		return res.status('200').json(expense);
 	}).catch(function(err) {
-		console.log('error', err);
+		console.log('server error', err);
 	});
 }
 

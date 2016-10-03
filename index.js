@@ -17,7 +17,7 @@ import Home from './client/home'
 ReactDOM.render((
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={theirApp} >
+      <Route path="/" component={theirApp}>
         <IndexRoute component={Home}/>
         <Route path="/dashboard" component={DashBoard} />
         <Route path="/login" component={Login} />
