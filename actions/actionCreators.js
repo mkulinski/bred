@@ -11,17 +11,17 @@ export function changeUserInfo(username, email){
 }
 
 export function sendLoginData(userObj){
-  return function(dispatch) {
+  return dispatch => {
     axios.post('http://localhost:3000/login', userObj)
-    .then(function(response) {
+    .then(response => {
       console.log('hit the send login data')
       dispatch({type: 'SEND_LOGIN_DATA_SUCCESS', payload: userObj})
     })
-    .then(function() {
+    .then(() => {
       console.log('hit the send to dashboard')
       dispatch(push('/dashboard'))
     })
-    .catch(function(err) {
+    .catch( err => {
       console.log('hit the error in sendLoginData')
       console.log('err', err)
       dispatch({type: 'SEND_LOGIN_DATA_ERROR', error: err})

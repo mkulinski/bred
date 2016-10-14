@@ -3,18 +3,6 @@ import ReactDOM from 'react-dom';
 import Nav from './nav'
 import { browserHistory } from 'react-router'
 
-class Login2 extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    console.log('login2 props',this.props)
-    return (
-      <div></div>
-    )
-  }
-}
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -38,10 +26,8 @@ export default class Login extends React.Component {
   }
 
   render() {
-    console.log('login props', this.props)
     return (
       <div>
-        <Login2 />
         <h1>Login</h1>
         <form onSubmit={this.onSubmit}>
           <input type="text" ref="username" placeholder="username"/>

@@ -8,7 +8,7 @@ import Login from './client/login'
 import Signup from './client/signup'
 import Profile from './client/profile'
 import Nav from './client/nav';
-import theirApp from './theirApp';
+import Container from './Container';
 import Expense from './client/expense'
 import Home from './client/home'
 
@@ -17,7 +17,7 @@ import Home from './client/home'
 ReactDOM.render((
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={theirApp}>
+      <Route path="/" component={Container}>
         <IndexRoute component={Home}/>
         <Route path="/dashboard" component={DashBoard} />
         <Route path="/login" component={Login} />

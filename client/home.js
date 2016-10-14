@@ -17,8 +17,8 @@ class Home extends React.Component {
           <h1>Bred</h1>
           <h4>Where your finances come together</h4>
           <div className="home-buttons">
-            <button className="signup"><Link to="/signup">Signup Today</Link></button>
-            <button className="login"><Link to="/login">Login</Link></button>
+            <Link to="/signup"><button className="signup">Signup Today</button></Link>
+            <Link to="/login"><button className="login">Login</button></Link>
           </div>
         </div>
       </section>
