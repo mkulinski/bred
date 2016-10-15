@@ -4,9 +4,13 @@ import { VictoryStack,VictoryBar } from 'victory';
 
 
 export default class ProgressBar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
-
-    let testExpenses = JSON.parse(localStorage.getItem("expenses"));
+    console.log('progressBar props',this.props);
+    // let testExpenses = JSON.parse(localStorage.getItem("expenses"));
+    const testExpenses = this.props.expenses
     let filler = ""
     let totalExpense = function reduce(array) {
         let total = 0;

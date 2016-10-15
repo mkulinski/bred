@@ -12,11 +12,12 @@ export default class DashBoard extends React.Component {
     super(props);
   }
   render() {
-    console.log('props in dash',this.props.user);
+    console.log('props in dash',this.props);
     return (
       <div>
-        <h2>{ this.props.user.username }s Dashboard</h2>
+        <h2>{ this.props.user.username }{"'"}s Dashboard</h2>
         <h3 className="expenses">Expenses vs. Income</h3>
+
         <h3 className="expenses">Recent Expenses Breakdown</h3>
         <div className="flex">
         </div>

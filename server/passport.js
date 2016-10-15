@@ -5,7 +5,6 @@ const User = require('./models/user.js');
 
 const PassportUse = passport.use(new LocalStrategy(function(username, password, done) {
   process.nextTick(function() {
-    console.log('server username!!!',username)
     User.findOne({
       where: {
         'username': username
@@ -20,7 +19,6 @@ const PassportUse = passport.use(new LocalStrategy(function(username, password, 
           message: 'Invalid password'
         });
       } else {
-        console.log('server username',username)
         done(null, user);
       }
     }).error(function(err) {

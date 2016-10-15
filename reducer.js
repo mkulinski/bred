@@ -1,16 +1,14 @@
-'use strict'
-
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 
 function user(state = {}, action) {
 
-  console.log('userStateChange',action);
   switch (action.type) {
     case 'SEND_LOGIN_DATA_SUCCESS':
       return Object.assign({}, state, {
         username: action.payload.username,
+        income: action.payload.income,
         loading: false,
         error: null
       })
@@ -29,14 +27,20 @@ function user(state = {}, action) {
       })
       break;
     default:
-    console.log('hit default');
       return state;
   }
 }
 
 function expenses(state=[], action) {
-  console.log('expenses',state, action);
-  return state;
+  switch (action.type) {
+    case 'SET_USER_EXPENSES':
+      return Object.assign({}, state, {
+        expenses: action.payload,
+      })
+      break;
+      default:
+        return state;
+  }
 }
 
 const userReducer = combineReducers({user, expenses, routing: routerReducer });

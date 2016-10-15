@@ -10,15 +10,28 @@ export function changeUserInfo(username, email){
   }
 }
 
+function getUserExpenses(username) {
+  return dispatch => {
+    axios.get(`http://localhost:3000/api/user/${username}/expense`)
+    .then(response => {
+      console.log('user- ', username,'expeses = ', response);
+      dispatch({ type: 'SET_USER_EXPENSES', payload: response.data });
+    })
+    .catch( err => {
+      console.log('err', err);
+    })
+  }
+}
+
 export function sendLoginData(userObj){
   return dispatch => {
     axios.post('http://localhost:3000/login', userObj)
     .then(response => {
-      console.log('hit the send login data')
-      dispatch({type: 'SEND_LOGIN_DATA_SUCCESS', payload: userObj})
+      console.log('userObj that I get back = ', response.data)
+      dispatch({type: 'SEND_LOGIN_DATA_SUCCESS', payload: response.data})
+      dispatch(getUserExpenses(userObj.username));
     })
     .then(() => {
-      console.log('hit the send to dashboard')
       dispatch(push('/dashboard'))
     })
     .catch( err => {

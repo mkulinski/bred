@@ -9,6 +9,7 @@ import userReducer from './reducer';
 const defaultState = {
   user: { username: 'mkulinski',
           email: 'me@michaelkulinski.com',
+          income: 134123,
           loading: false,
           error:null
   },

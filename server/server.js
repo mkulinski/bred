@@ -22,11 +22,14 @@ app.get('/', (req, res) =>{
 });
 
 app.post('/login',
-  passport.authenticate('local'), function(req, res) {
-    // authentication was successful.
-    // `req.user` contains the authenticated user.
-    res.send('authentication successful');
-  }
+  passport.authenticate('local'),
+	(req, res) => {
+		res.status(200).json({
+			status: 'Login successful!',
+			income: req.user.income,
+			username: req.user.username,
+		});
+	}
 );
 
 // user api
