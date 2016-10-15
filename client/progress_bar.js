@@ -21,35 +21,35 @@ export default class ProgressBar extends React.Component {
     }
     let totalExp = totalExpense(testExpenses)
 
-    let income = parseInt(JSON.parse(localStorage.getItem("user")).income);
+    let income = this.props.income;
 
     console.log('income',income)
     console.log('totalExp',totalExp)
-
-    return (
-       <div className="progress">
-       <VictoryStack horizontal
-         height={50}
-         padding={25}
-         style={{
-           data: {width: 22},
-           labels: {fontSize: 20}
-         }}
-       >
-         <VictoryBar
-           style={{data: {fill: "tomato"}}}
-           data={[
-             {x: 1, y: totalExp}
-           ]}
-         />
-         <VictoryBar
-           style={{data: {fill: "blue"}}}
-           data={[
-             {x: 1, y: income}
-           ]}
-         />
-       </VictoryStack>
-        </div>
-    )
+    //
+    // return (
+    //    <div className="progress">
+    //    <VictoryStack horizontal
+    //      height={50}
+    //      padding={25}
+    //      style={{
+    //        data: {width: 22},
+    //        labels: {fontSize: 20}
+    //      }}
+    //    >
+    //      <VictoryBar
+    //        style={{data: {fill: "tomato"}}}
+    //        data={[
+    //          {x: 1, y: totalExp}
+    //        ]}
+    //      />
+    //      <VictoryBar
+    //        style={{data: {fill: "blue"}}}
+    //        data={[
+    //          {x: 1, y: income}
+    //        ]}
+    //      />
+    //    </VictoryStack>
+    //     </div>
+    // )
   }
 }

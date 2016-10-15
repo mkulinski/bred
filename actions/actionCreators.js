@@ -17,6 +17,9 @@ function getUserExpenses(username) {
       console.log('user- ', username,'expeses = ', response);
       dispatch({ type: 'SET_USER_EXPENSES', payload: response.data });
     })
+    .then (() => {
+      dispatch(push('/dashboard'));
+    })
     .catch( err => {
       console.log('err', err);
     })
@@ -29,10 +32,9 @@ export function sendLoginData(userObj){
     .then(response => {
       console.log('userObj that I get back = ', response.data)
       dispatch({type: 'SEND_LOGIN_DATA_SUCCESS', payload: response.data})
-      dispatch(getUserExpenses(userObj.username));
     })
     .then(() => {
-      dispatch(push('/dashboard'))
+      dispatch(getUserExpenses(userObj.username));
     })
     .catch( err => {
       console.log('hit the error in sendLoginData')
