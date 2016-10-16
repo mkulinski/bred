@@ -2,16 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { VictoryStack,VictoryChart,VictoryAxis,VictoryBar } from 'victory';
 
-
-export default class TimeChart extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const TimeChart = props => {
       let cats =[];
       let dataPoints = []
-        let testExpenses = this.props.expenses
+        let testExpenses = props.expenses;
         let filler = ""
 
         for (let i = 0; i< testExpenses.length;i++) {
@@ -42,5 +36,6 @@ export default class TimeChart extends React.Component {
 </VictoryChart>
 </div>
     )
-  }
 }
+
+export default TimeChart;
