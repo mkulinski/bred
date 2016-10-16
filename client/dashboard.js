@@ -21,6 +21,7 @@ export default class DashBoard extends React.Component {
         <h3 className="expenses">Recent Expenses Breakdown</h3>
         <div className="flex">
           <Pie expenses={this.props.expenses.expenses} />
+          <TimeChart expenses={this.props.expenses.expenses} />
         </div>
       </div>
     )

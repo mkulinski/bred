@@ -4,12 +4,14 @@ import { VictoryStack,VictoryChart,VictoryAxis,VictoryBar } from 'victory';
 
 
 export default class TimeChart extends React.Component {
-
+  constructor(props) {
+    super(props);
+  }
 
   render() {
       let cats =[];
       let dataPoints = []
-        let testExpenses = JSON.parse(localStorage.getItem("expenses"));
+        let testExpenses = this.props.expenses
         let filler = ""
 
         for (let i = 0; i< testExpenses.length;i++) {
