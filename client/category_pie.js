@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import { VictoryPie } from 'victory';
 
 export default class Pie extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
 
-      let testExpenses = JSON.parse(localStorage.getItem("expenses"));
+      // let testExpenses = JSON.parse(localStorage.getItem("expenses"));
+      let testExpenses = this.props.expenses
       let filler = ""
       console.log(testExpenses)
 
