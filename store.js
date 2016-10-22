@@ -1,8 +1,8 @@
-import { createStore, compose, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
-import promise from 'redux-promise-middleware'
+import promise from 'redux-promise-middleware';
 
 import userReducer from './reducer';
 
@@ -11,10 +11,10 @@ const defaultState = {
           email: 'me@michaelkulinski.com',
           income: 134123,
           loading: false,
-          error:null
+          error: null,
   },
-  expenses: [{cost: '12', cat: 'food'}]
-}
+  expenses: [],
+};
 const newRouter = routerMiddleware(browserHistory);
 const middleware = applyMiddleware(promise(), thunk, newRouter);
 
