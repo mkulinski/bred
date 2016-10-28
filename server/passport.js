@@ -22,7 +22,6 @@ const PassportUse = passport.use(new LocalStrategy(function(username, password, 
         done(null, user);
       }
     }).error(function(err) {
-      console.log('server error in passport')
       done(err);
     });
   });

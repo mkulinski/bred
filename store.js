@@ -15,10 +15,13 @@ const defaultState = {
   },
   expenses: [],
 };
+
 const newRouter = routerMiddleware(browserHistory);
+
 const middleware = applyMiddleware(promise(), thunk, newRouter);
 
 const store = createStore(userReducer, defaultState, middleware);
 
 export const history = syncHistoryWithStore(browserHistory, store);
+
 export default store;
