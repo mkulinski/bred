@@ -14,7 +14,7 @@ const path = require('path');
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, './client')));
 
 app.get('/', (req, res) =>{
