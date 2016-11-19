@@ -1,4 +1,3 @@
-'use strict'
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -6,9 +5,6 @@ const bodyParser = require('body-parser');
 const userCtrl = require('./controllers/user-controller.js');
 const expenseCtrl = require('./controllers/expense-controller.js');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const User = require('./models/user.js');
-const PassportUse = require('./passport.js')
 const path = require('path');
 
 app.use(passport.initialize());
